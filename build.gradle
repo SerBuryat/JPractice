@@ -1,25 +1,30 @@
 plugins {
-    id 'java'
+    id 'io.franzbecker.gradle-lombok' version '4.0.0' apply false
+    id 'org.springframework.boot' version '2.6.3' apply false
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply false
 }
 
-group 'com.judge0api'
-version '0.1'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.franzbecker.gradle-lombok'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-repositories {
-    mavenCentral()
-}
+    group = 'com.jpractice'
+    version = '0.1'
+    sourceCompatibility = '11'
 
-dependencies {
-    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+    repositories {
+        mavenCentral()
+    }
 
-    // https://mvnrepository.com/artifact/org.projectlombok/lombok
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    test {
+        useJUnitPlatform()
+    }
 
-    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
-}
-
-test {
-    useJUnitPlatform()
+    dependencyManagement {
+        imports {
+            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2021.0.0'
+        }
+    }
 }
