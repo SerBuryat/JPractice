@@ -1,4 +1,4 @@
-package com.jpractice.judge0api.httpclient;
+package com.jpractice.judge0api.submission;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

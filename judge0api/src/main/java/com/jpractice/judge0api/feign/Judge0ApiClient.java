@@ -1,9 +1,9 @@
 package com.jpractice.judge0api.feign;
 
 import com.jpractice.judge0api.config.ClientConfig;
-import com.jpractice.judge0api.httpclient.CreateJavaSubmission;
-import com.jpractice.judge0api.httpclient.CreateSubmissionToken;
-import com.jpractice.judge0api.httpclient.GetJavaSubmission;
+import com.jpractice.judge0api.submission.CreateJavaSubmission;
+import com.jpractice.judge0api.submission.CreateSubmissionToken;
+import com.jpractice.judge0api.submission.GetJavaSubmission;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

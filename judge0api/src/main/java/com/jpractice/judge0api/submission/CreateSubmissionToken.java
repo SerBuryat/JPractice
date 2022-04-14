@@ -1,4 +1,4 @@
-package com.jpractice.judge0api.httpclient;
+package com.jpractice.judge0api.submission;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

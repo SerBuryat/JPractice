@@ -1,6 +1,5 @@
 rootProject.name = 'JPractice'
 
-include 'core'
 include 'judge0api'
 include 'api'
 
