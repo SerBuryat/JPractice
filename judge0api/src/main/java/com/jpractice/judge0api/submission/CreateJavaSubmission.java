@@ -1,17 +1,23 @@
 package com.jpractice.judge0api.submission;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * @author Artem Anosov
  */
-@Builder
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class CreateJavaSubmission {
-    @JsonProperty("language_id")
-    private final Integer languageId = 62;
+
+    // 62 is java language code in Judge0Api
+    @JsonProperty(value = "language_id", access = Access.READ_ONLY)
+    private Integer languageId = 62;
+
     @JsonProperty("source_code")
     private String sourceCode;
 }
