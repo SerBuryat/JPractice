@@ -1,0 +1,9 @@
+spring:
+  main:
+    banner-mode: off
+
+feign:
+  clients:
+    judge0api:
+      name: ${JUDGE0API-CLIENT-NAME}
+      url: ${JUDGE0API-CLIENT-URL}

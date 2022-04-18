@@ -20,4 +20,12 @@ public class CreateJavaSubmission {
 
     @JsonProperty("source_code")
     private String sourceCode;
+
+    @Override
+    public String toString() {
+        return "CreateJavaSubmission{" +
+            "languageId=" + languageId +
+            ", sourceCode='" + sourceCode + '\'' +
+            '}';
+    }
 }

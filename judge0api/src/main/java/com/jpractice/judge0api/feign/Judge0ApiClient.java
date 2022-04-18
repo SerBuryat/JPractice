@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Artem Anosov
  */
 @FeignClient(
-    value = "judge0api",
-    url = "https://judge0-ce.p.rapidapi.com",
+    value = "${feign.clients.judge0api.name}",
+    url = "${feign.clients.judge0api.url}",
     configuration = ClientConfig.class)
 public interface Judge0ApiClient {
 

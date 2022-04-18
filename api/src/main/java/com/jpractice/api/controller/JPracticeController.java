@@ -18,13 +18,17 @@ public class JPracticeController {
     private final Judge0ApiClient judge0ApiClient;
 
     @PostMapping("compile-code")
-    public GetJavaSubmission getJavaSubmission(@RequestBody CreateJavaSubmission createJavaSubmission) {
+    public String getJavaSubmission(@RequestBody CreateJavaSubmission createJavaSubmission) {
         //Stdout - return only console output
         String fields = "stdout";
         boolean encoded = false;
         CreateSubmissionToken token =
             judge0ApiClient.createJavaSubmission(encoded, fields, createJavaSubmission);
 
-        return judge0ApiClient.getJavaSubmission(token.getToken(), encoded, fields);
+        GetJavaSubmission getJavaSubmission =
+            judge0ApiClient.getJavaSubmission(token.getToken(), encoded, fields);
+
+        // JudgeApi0 returns string with empty line;
+        return getJavaSubmission.getConsoleOut().trim();
     }
 }
